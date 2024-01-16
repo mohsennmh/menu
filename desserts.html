@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="order.js"></script>
+    <title>Lebanese Delights - Desserts</title>
+    <style> 
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            transition: background-color 0.5s;
+        }
+
+        header {
+            background-color: #2c3e50;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            border-bottom: 3px solid #fff;
+        }
+
+        nav {
+            background-color: #34495e;
+            overflow: hidden;
+        }
+
+        nav a {
+            float: left;
+            display: block;
+            color: #fff;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #fff;
+            color: #333;
+        }
+
+        section {
+            margin: 20px;
+            text-align: center;
+        }
+
+        h1,
+        h2 {
+            color: #2c3e50;
+            text-transform: uppercase;
+        }
+
+        p {
+            color: #555;
+            line-height: 1.6;
+        }
+    .dessert-item {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px;
+        border: 1px solid #ddd;
+        margin: 10px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .dessert-item:hover {
+        transform: scale(1.05);
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+        margin-bottom: 10px;
+    }
+
+    footer {
+            background-color: #2c3e50;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            border-top: 3px solid #fff;
+        }
+        .dessert-item {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin: 10px;
+            padding: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .dessert-item:hover {
+            background-color: #4c6680;
+        }
+        #order-box {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s;
+            max-width: 300px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        #order-list li {
+            list-style: none;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #total-price {
+            margin-top: 10px;
+            font-weight: bold;
+            color: #333;
+        }
+        .clear-button,
+        .place-order-button {
+            display: block;
+            margin-top: 15px;
+            padding: 10px;
+            width: 100%;
+            background-color: #4CAF50; /* Green */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .clear-button:hover,
+        .place-order-button:hover {
+            background-color: #45a049; /* Darker green on hover */
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Lebanese Delights - Desserts</h1>
+        <p>Sweet Endings to Your Lebanese Feast</p>
+    </header>
+
+    <nav>
+        <a href="home.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="desserts.html">Desserts</a>
+        <a href="drinks.html">Drinks</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <section>
+        <h2>Lebanese Sweets</h2>
+        <div class="dessert-item" onclick="addToOrder('Desserts','Baklava', 9.99)">
+            <img src="c:\Users\DELL\Downloads\Baklava.jpeg" alt="Baklava">
+            <h3>Baklava</h3>
+            <p>Layers of phyllo dough filled with chopped nuts and sweetened with honey syrup.</p>
+            <p>$9.99</p>
+        </div>
+
+        <div class="dessert-item" onclick="addToOrder('Desserts','Atayef', 8.99)">
+            <img src="c:\Users\DELL\Downloads\Atayef.jpeg" alt="Atayef">
+            <h3>Atayef</h3>
+            <p>Stuffed Lebanese pancakes with sweet cheese or nuts, served with rose water syrup.</p>
+            <p>$8.99</p>
+        </div>
+
+        <div class="dessert-item" onclick="addToOrder('Desserts','Namoura', 7.99)">
+            <img src="c:\Users\DELL\Downloads\Namoura.jpeg" alt="Namoura">
+            <h3>Namoura</h3>
+            <p>Sweet semolina cake, topped with almonds or coconut, and soaked in sugar syrup.</p>
+            <p>$7.99</p>
+        </div>
+        <div class="dessert-item" onclick="addToOrder('Desserts', 'Maamoul', 7.49)">
+            <img src="c:\Users\DELL\Downloads\Ma'amoul.jpeg" alt="Maamoul">
+            <h3>Ma'amoul</h3>
+            <p>Shortbread-like cookies filled with dates, nuts, or figs, and dusted with powdered sugar.</p>
+            <p>$7.49</p>
+        </div>
+        <div class="dessert-item" onclick="addToOrder('Desserts', 'Basbousa', 7.79)">
+            <img src="c:\Users\DELL\Downloads\Basbousa.jpeg" alt="Basbousa">
+            <h3>Basbousa</h3>
+            <p>Semolina cake soaked in simple syrup, often flavored with rose or orange blossom water.</p>
+            <p>$7.79</p>
+        </div>
+        <div class="dessert-item" onclick="addToOrder('Desserts', 'Knafeh', 9.99)">
+            <img src="c:\Users\DELL\Downloads\Knafeh.jpeg" alt="Knafeh">
+            <h3>Knafeh</h3>
+            <p>Shredded phyllo dough layered with sweet cheese or semolina, baked to golden perfection.</p>
+            <p>$9.99</p>
+        </div>
+        <div class="dessert-item" onclick="addToOrder('Desserts', 'Halawet el Jibn', 10.99)">
+            <img src="c:\Users\DELL\Downloads\Halawet el Jibn.jpeg" alt="Halawet el Jibn">
+            <h3>Halawet el Jibn</h3>
+            <p>Sweet cheese rolls filled with clotted cream, topped with rose water syrup and pistachios.</p>
+            <p>$10.99</p>
+        </div>
+        <div class="dessert-item" onclick="addToOrder('Desserts', 'Rice Pudding', 6.59)">
+            <img src="c:\Users\DELL\Downloads\Rice Pudding.jpeg" alt="Rice Pudding">
+            <h3>Rice Pudding (Roz Bel Laban)</h3>
+            <p>Creamy rice pudding flavored with vanilla and topped with a sprinkle of cinnamon.</p>
+            <p>$6.59</p>
+        </div>
+        <div class="dessert-item" onclick="addToOrder('Desserts', 'Znoud el Sit', 8.49)">
+            <img src="c:\Users\DELL\Downloads\Znoud el Sit.jpeg" alt="Znoud el Sit">
+            <h3>Znoud el Sit</h3>
+            <p>Pastry tubes filled with sweet cream or custard, fried until golden, and dusted with powdered sugar.</p>
+            <p>$8.49</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Lebanese Delights. All rights reserved.</p>
+    </footer>
+
+    <div id="order-box" class="order-box">
+        <ul id="order-list" class="order-list"></ul>
+        <p id="total-price" class="total-price">Total: $0.00</p>
+        <button onclick="clearOrder()" class="clear-button">Clear Order</button>
+        <button onclick="placeOrder()" class="place-order-button">Place Order</button>
+    </div>
+
+    <script defer src="order.js"></script>
+
+</body>
+</html>

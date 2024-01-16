@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <script defer src="order.js"></script>
+    <title>Lebanese Delights - Drinks</title>
+    <style>
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            transition: background-color 0.5s;
+        }
+
+        header {
+            background-color: #2c3e50;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            border-bottom: 3px solid #fff;
+        }
+
+        nav {
+            background-color: #34495e;
+            overflow: hidden;
+        }
+
+        nav a {
+            float: left;
+            display: block;
+            color: #fff;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #fff;
+            color: #333;
+        }
+
+        section {
+            margin: 20px;
+            text-align: center;
+        }
+
+        h1,
+        h2 {
+            color: #2c3e50;
+            text-transform: uppercase;
+        }
+
+        p {
+            color: #555;
+            line-height: 1.6;
+        }
+
+    .drink-item {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px;
+        border: 1px solid #ddd;
+        margin: 10px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .drink-item:hover {
+        transform: scale(1.05);
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+        margin-bottom: 10px;
+    }
+
+    footer {
+            background-color: #2c3e50;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            border-top: 3px solid #fff;
+        }
+
+        .drink-item {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin: 10px;
+            padding: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .drink-item:hover {
+            background-color: #4c6680;
+        }
+        #order-box {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s;
+            max-width: 300px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        #order-list li {
+            list-style: none;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #total-price {
+            margin-top: 10px;
+            font-weight: bold;
+            color: #333;
+        }
+        .clear-button,
+        .place-order-button {
+            display: block;
+            margin-top: 15px;
+            padding: 10px;
+            width: 100%;
+            background-color: #4CAF50; /* Green */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .clear-button:hover,
+        .place-order-button:hover {
+            background-color: #45a049; /* Darker green on hover */
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Lebanese Delights - Drinks</h1>
+        <p>Quench Your Thirst with Authentic Lebanese Beverages</p>
+    </header>
+
+    <nav>
+        <a href="home.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="desserts.html">Desserts</a>
+        <a href="drinks.html">Drinks</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <section>
+        <h2>Traditional Lebanese Beverages</h2>
+        <div class="drink-item" onclick="addToOrder('Drinks','Lebanese Tea', 3.99)">
+            <img src="c:\Users\DELL\Downloads\Lebanese Tea.jpeg" alt="Lebanese Tea">
+            <h3>Lebanese Tea</h3>
+            <p>Aromatic black tea with a hint of mint, served sweetened or unsweetened.</p>
+            <p>$3.99</p>
+        </div>
+        <div class="drink-item" onclick="addToOrder('Drinks', 'Arabic Coffee', 2.99)">
+            <img src="c:\Users\DELL\Downloads\Arabic Coffee.jpeg" alt="Arabic Coffee">
+            <h3>Arabic Coffee (Qahwa)</h3>
+            <p>Strong and aromatic coffee served in small cups.</p>
+            <p>$2.99</p>
+        </div>
+        
+
+        <div class="drink-item" onclick="addToOrder('Drinks','Ayran', 4.99)">
+            <img src="c:\Users\DELL\Downloads\Ayran.jpeg" alt="Ayran">
+            <h3>Ayran</h3>
+            <p>A refreshing yogurt-based drink with a touch of salt, perfect for cooling off.</p>
+            <p>$4.99</p>
+        </div>
+
+        <div class="drink-item" onclick="addToOrder('Drinks','Tamarind Juice', 5.99)">
+            <img src="c:\Users\DELL\Downloads\Tamarind Juice.jpeg" alt="Tamarind Juice">
+            <h3>Tamarind Juice</h3>
+            <p>Sweet and tangy juice made from tamarind, sugar, and water.</p>
+            <p>$5.99</p>
+        </div>
+
+        <div class="drink-item" onclick="addToOrder('Drinks', 'Jallab', 6.49)">
+            <img src="c:\Users\DELL\Downloads\Jallab.jpeg" alt="Jallab">
+            <h3>Jallab</h3>
+            <p>A traditional Middle Eastern drink made with grape molasses, dates, and water, garnished with pine nuts.</p>
+            <p>$6.49</p>
+        </div>
+        <div class="drink-item" onclick="addToOrder('Drinks', 'Mint Lemonade', 4.99)">
+            <img src="c:\Users\DELL\Downloads\Mint Lemonade.jpeg" alt="Mint Lemonade">
+            <h3>Mint Lemonade</h3>
+            <p>Refreshing lemonade infused with fresh mint leaves.</p>
+            <p>$4.99</p>
+        </div>
+        <div class="drink-item" onclick="addToOrder('Drinks', 'Rose Water Lemonade', 5.49)">
+            <img src="c:\Users\DELL\Downloads\Rose Water Lemonade.jpeg" alt="Rose Water Lemonade">
+            <h3>Rose Water Lemonade</h3>
+            <p>Delicate lemonade infused with the subtle flavor of rose water.</p>
+            <p>$5.49</p>
+        </div>
+        <div class="drink-item" onclick="addToOrder('Drinks', 'Pomegranate Juice', 6.99)">
+            <img src="c:\Users\DELL\Downloads\Pomegranate Juice.jpeg" alt="Pomegranate Juice">
+            <h3>Pomegranate Juice</h3>
+            <p>Refreshing and antioxidant-rich juice made from fresh pomegranates.</p>
+            <p>$6.99</p>
+        </div>
+        <div class="drink-item" onclick="addToOrder('Drinks', 'Saffron Tea', 4.79)">
+            <img src="c:\Users\DELL\Downloads\Saffron Tea.jpeg" alt="Saffron Tea">
+            <h3>Saffron Tea</h3>
+            <p>A fragrant tea infused with the unique flavor of saffron.</p>
+            <p>$4.79</p>
+        </div>
+        
+        
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Lebanese Delights. All rights reserved.</p>
+    </footer>
+
+    <div id="order-box" class="order-box">
+        <ul id="order-list" class="order-list"></ul>
+        <p id="total-price" class="total-price">Total: $0.00</p>
+        <button onclick="clearOrder()" class="clear-button">Clear Order</button>
+        <button onclick="placeOrder()" class="place-order-button">Place Order</button>
+    </div>
+    <script defer src="order.js"></script>
+
+
+</body>
+</html>
